@@ -11,4 +11,4 @@ Tool to dynamically generate a password based on user inputs and filters.
 ## Website
  https://myleskovacs.github.io/Password-generator/
 
-![ScreenShot](Images\liveSite.JPG)
+![ScreenShot](./Images/liveSite.JPG)
