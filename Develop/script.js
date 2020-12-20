@@ -6,7 +6,7 @@ const randomFunc = {
   symbol: getRandomSymbol,
 }
 var generateFilters = function() { 
-  debugger;
+  //debugger;
   const lengthTest = +prompt("How long would you like your password? (must be between 8 and 128 characers");
   const length = parseInt(lengthTest);
   const hasLower = window.confirm("Would you like to include lowercase characters?");
