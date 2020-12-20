@@ -1,27 +1,52 @@
 // Assignment code here
 var generatePasword = function() {
+  var getLength = function() {
   // Determines the users desired password length
-  var length = window.prompt("How long would you like your password? (at least 8 and no more than 128)");
-    console.log(length);
+  var length = "";
+  while (length === "" || length === null) {
+    length = prompt("How long would you like your password to be? Please enter a value between 8 and 128")
+  }
+  console.log(length);
+  return length;
+};
 
 
   // Determines if password is using lowercase letters
   var lower = window.confirm("Would you like to include lowercase?")
-    console.log(lower);
-
-
+    if (lowerConfirm) {
+      //include lowercase
+    }
+    else {
+      //exclude lowercase
+    };
   // Determines if password is using uppercase letters
   var upper = window.confirm("Would you like to include uppercase?")
-    console.log(upper);
+    if (upperConfirm) {
+      //include uppercase
+    }
+    else {
+      //exclude uppercase
+    };
 
 
   // Determines if password is using numbers
   var numbers = window.confirm("Would you like to include numbers?")
-    console.log(numbers);
+    if (numbersConfirm) {
+      //include numbers
+    }
+    else {
+      //exclude numbers
+    };
+
 
   // Determines if password is using special characters
   var special = window.confirm("Would you like to include special characters?") 
-    console.log(special);
+    if (specialConfirm) {
+      //include special characters
+    }
+    else {
+    //exclude special characters
+    };
 };
 
 generatePassword();
