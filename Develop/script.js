@@ -7,17 +7,18 @@ const randomFunc = {
 }
 var generateFilters = function() { 
   debugger;
-  const length = +prompt("How long would you like your password? (must be between 8 and 128 characers");
+  const lengthTest = +prompt("How long would you like your password? (must be between 8 and 128 characers");
+  const length = parseInt(lengthTest);
   const hasLower = window.confirm("Would you like to include lowercase characters?");
   const hasUpper = window.confirm("Would you like to include uppercase characters?");
   const hasNumber = window.confirm("Would you like to include numbers?");
   const hasSymbol = window.confirm("Would you like to include symbols?")
 
-   return generatePassword(hasLower, hasUpper, hasNumber, hasSymbol, length);
+  password = generatePassword(hasLower, hasUpper, hasNumber, hasSymbol, length);
 };
 
 
-var generatePassword = function(lower, upper, number, symbol, length) {
+generatePassword = function(lower, upper, number, symbol, length) {
   let generatedPassword = '';
   const typesCount = lower + upper + number + symbol;
   const typesArr = [{lower}, {upper}, {number}, {symbol}].filter(item =>
@@ -29,7 +30,7 @@ Object.values(item)[0]);
     }
 
     // Loop it
-    for(let i=0; i<generateFilters.length; i+typesCount) {
+    for(let i=0; i<length; i+typesCount) {
       typesArr.forEach(type => {
         const funcName = Object.keys(type)[0];
         generatedPassword += randomFunc[funcName] ();
@@ -37,6 +38,7 @@ Object.values(item)[0]);
     }
     const finalPassword = generatedPassword.slice(0, length);
 
+    console.log(finalPassword);
     return finalPassword;
 }
 
@@ -60,10 +62,9 @@ var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
 function writePassword() {
-  generateFilters();
-  var password = generatePassword();
+  generateFilters()
   var passwordText = document.querySelector("#password");
-
+  password = generatePassword();
   passwordText.value = password;
 
 }
